@@ -8,20 +8,20 @@
     },
 
     "version": {
-        "name": "$TRAVIS_BRANCH",
-        "desc": "$DESC",
+        "name": "stable",
+        "desc": "Release version built from the lastest release tag.",
         "released": "$DATE",
-        "vcs_tag": "$TAG",
+        "vcs_tag": "$TRAVIS_TAG",
         "attributes": [],
         "gpgSign": false
     },
 
     "files": [
-        {
-          "includePattern": "target/x86_64-unknown-linux-musl/release/fastobo-validator",
-          "uploadPattern": "/fastobo-validator",
-          "matrixParams": { "override": 1 }
-        }
+      {
+        "includePattern": "dist/fastobo_validator-x86_64-linux-musl.tar.gz",
+        "uploadPattern": "/fastobo_validator-stable-x86_64-linux-musl.tar.gz",
+        "matrixParams": { "override": 1 }
+      }
     ],
 
     "publish": true

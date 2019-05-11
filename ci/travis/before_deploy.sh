@@ -5,10 +5,11 @@
 # --- Generating Bintray deployment configuration ----------------------------
 
 export DATE=$(date -I)
-export TAG=${TRAVIS_TAG:-master}
-export DESC=$([ -z "$TRAVIS_TAG" ] && echo "Development version built from latest commit on master branch" || echo "Release v$TRAVIS_TAG")
-
-
 for template in ci/bintray/*.json.in; do
   envsubst < "$template" | tee "${template%.in}"
 done
+
+# --- Package x86_64-linux-musl ----------------------------------------------
+
+mkdir -p $TRAVIS_BUILD_DIR/dist
+tar czf dist/fastobo_validator-x86_64-linux-musl.tar.gz -C target/x86_64-unknown-linux-musl/release/ fastobo-validator
