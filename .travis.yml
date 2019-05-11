@@ -24,7 +24,7 @@ before_install:
 
 script:
 - cargo check
-- docker run --rm -it -v $(pwd):/home/rust/src -v $HOME/.cargo:/home/rust/.cargo $IMG_LINUX64
+- docker run --rm -it -v $(pwd):/home/rust/src -v $HOME/.cargo:/root/.cargo $IMG_LINUX64
   cargo build --release
 
 after_success:
