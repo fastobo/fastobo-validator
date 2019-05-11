@@ -17,11 +17,11 @@
     },
 
     "files": [
-        {
-          "includePattern": "dist/fastobo_validator-x86_64-linux-musl.tar.gz",
-          "uploadPattern": "/fastobo_validator-master-x86_64-linux-musl.tar.gz",
-          "matrixParams": { "override": 1 }
-        }
+      {
+        "includePattern": "dist/fastobo_validator-x86_64-linux-musl.tar.gz",
+        "uploadPattern": "/master/fastobo_validator-x86_64-linux-musl.tar.gz",
+        "matrixParams": { "override": 1, "list_in_downloads": true }
+      }
     ],
 
     "publish": true

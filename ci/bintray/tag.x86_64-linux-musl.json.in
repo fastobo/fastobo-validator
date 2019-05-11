@@ -19,8 +19,8 @@
     "files": [
       {
         "includePattern": "dist/fastobo_validator-x86_64-linux-musl.tar.gz",
-        "uploadPattern": "/fastobo_validator-$TRAVIS_TAG-x86_64-linux-musl.tar.gz",
-        "matrixParams": { "override": 1 }
+        "uploadPattern": "/$TRAVIS_TAG/fastobo_validator-x86_64-linux-musl.tar.gz",
+        "matrixParams": { "override": 1, "list_in_downloads": true }
       }
     ],
 

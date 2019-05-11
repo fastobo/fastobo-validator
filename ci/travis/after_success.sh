@@ -13,7 +13,7 @@ done
 
 if [ ! -z "$TRAVIS_TAG" ]; then
   for bin in target/*/release/fastobo-validator; do
-    strip $bin
+    sudo strip $bin || :
   done
 fi
 

@@ -27,8 +27,8 @@ script:
 - docker run --rm -it -v $(pwd):/home/rust/src -v $HOME/.cargo:/home/rust/.cargo $IMG_LINUX64
   cargo build --release
 
-before_deploy:
-- ci/travis/before_deploy.sh
+after_success:
+- ci/travis/after_success.sh
 
 notifications:
   email:
@@ -45,7 +45,7 @@ deploy:
     repo: fastobo/fastobo-validator
     rust: stable
 - provider: bintray
-  file: ci/bintray/stable.x86_64-linux-musl.json
+  file: ci/bintray/tag.x86_64-linux-musl.json
   user: althonos
   key:
     secure: XCFicO9tn18ZpY2+D0Sds55x5selq6/DwmL8qdKFYFiINw+kCLYKiZDRH1dTwouqyDJzblLhLsvHxKvETSZj8F3EMjQzBCWjYbJvmavPk10k+RP4WcBULhTpKJDqj5duL4VDOZL7qWyOUuQLQPL3EaXcCaxYx/3Q93K9N8RKrdCxIBdTR4tdGnEYlKVDyAxAoq7WfWJPMS9gNgXzumGrka/GW7oEy0zarLGgTcF514DBbIipAsz4PK1FQUL2qMNwk1koE5IVCR8aEzN/2G4gN7ipzqNHas58rGpGfN9aQGvXhs1Pw6izcN72YTpqpNmeiLk5eXGrgh3fQk1DtaXtigBWuMfQVCQPCHmg0xgo0mfLOQAH9BEEgtMzjeChXvzVFK0uYDZ1GpRAIli5Gn9TtliqDYMPCcHoK4z846KBn1ToNScFgBk04XZpu7u71xbSu7h8dNksQ/WxvmaEeNJwJUXn5MpohXjYD5IyJNXmsixaK+/vW8Lt5CQwdXZeUaNSibFtaicCV+93BpQ7K0Fiw+A0wI6Cg6qH4aOrrsG2IKL37N6Z2BmcIF4ebfsqHMQZUvBwOc3k2VevmFk7s0wNq3DU2EUgenTy9Es+gDSBxQ66MM1VskBwsOx74XbYLZ9clYyAGjT0Rqfzbj0FKDJNI2vochDWr46su1e5OGnYk8I=
@@ -55,7 +55,7 @@ deploy:
     rust: stable
     tags: true
 - provider: bintray
-  file: ci/bintray/tag.x86_64-linux-musl.json
+  file: ci/bintray/stable.x86_64-linux-musl.json
   user: althonos
   key:
     secure: XCFicO9tn18ZpY2+D0Sds55x5selq6/DwmL8qdKFYFiINw+kCLYKiZDRH1dTwouqyDJzblLhLsvHxKvETSZj8F3EMjQzBCWjYbJvmavPk10k+RP4WcBULhTpKJDqj5duL4VDOZL7qWyOUuQLQPL3EaXcCaxYx/3Q93K9N8RKrdCxIBdTR4tdGnEYlKVDyAxAoq7WfWJPMS9gNgXzumGrka/GW7oEy0zarLGgTcF514DBbIipAsz4PK1FQUL2qMNwk1koE5IVCR8aEzN/2G4gN7ipzqNHas58rGpGfN9aQGvXhs1Pw6izcN72YTpqpNmeiLk5eXGrgh3fQk1DtaXtigBWuMfQVCQPCHmg0xgo0mfLOQAH9BEEgtMzjeChXvzVFK0uYDZ1GpRAIli5Gn9TtliqDYMPCcHoK4z846KBn1ToNScFgBk04XZpu7u71xbSu7h8dNksQ/WxvmaEeNJwJUXn5MpohXjYD5IyJNXmsixaK+/vW8Lt5CQwdXZeUaNSibFtaicCV+93BpQ7K0Fiw+A0wI6Cg6qH4aOrrsG2IKL37N6Z2BmcIF4ebfsqHMQZUvBwOc3k2VevmFk7s0wNq3DU2EUgenTy9Es+gDSBxQ66MM1VskBwsOx74XbYLZ9clYyAGjT0Rqfzbj0FKDJNI2vochDWr46su1e5OGnYk8I=
@@ -75,7 +75,7 @@ deploy:
     rust: stable
     tags: true
 - provider: cargo
-  key:
+  token:
     secure: FhmTftkPAMhgkVXq4YHMy/HYRvAUXo3jdVPknQjoBttcoFC80WbLsMu6xtW8XeI+15G/1T/U+mtHAOpD/doTmkFVhf/QRMtzlmKAQCEBXHf5f0WzBa3BGImh6LxHj5I2HHKWPBoqKuC5rhu0OFGYRk6YYyA2SZRSZEP0ZGYtIIca1/CeSZPSlh93YdCI7zjh1rO7mk0IVklEgPhsttM6Iv7N2T89+AQOV6bNuxDol/2QSS/uJ+lZH9N0ykJ6lOF2diMAChDZZgVHB0Uh6dAoMckwvBI8ywSsKv3kYzelc5W2YQmNIzK2URuMPb/G2yuHGvmNxo5mWr7Ewqi3iXxZUygAIJKzk6hrZcYgcWPE4lNwZ37qkfrDPizGp3V3aVqczDwJ1eyiiTyK7ca+gxV5FjfWLF2YQucSTMZE1tBbLov6oZVi4FClKnt+YeB2VhHSm62hn/AhivQtUnExnxgcuaa1ktBR+JvkbNUBMRytA47qIOy1Gae0bnv1OFMpS8AaiHis9g6vLbveRSpR6PlT2GOr23KfYWjiDC5y+rdsxjyUp4VpTq3hD3s2qCl4KHlZB/h/vdUhk+skTFmwSTaWGqYIHUFafiiRkYouqrlFOxloMP5oJoxkoIkTD/K0lN3VNIlhWvPAMteCzMd4GF3a5dfLBPPoCrEt+HIERceZhTc=
   on:
     repo: fastobo/fastobo-validator
