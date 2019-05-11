@@ -9,6 +9,20 @@ for template in ci/bintray/*.json.in; do
   envsubst < "$template" | tee "${template%.in}"
 done
 
+# --- Strip binaries if this is a release build ------------------------------
+
+if [ ! -z "$TRAVIS_TAG" ]; then
+  for bin in target/*/release/fastobo-validator; do
+    strip $bin
+  done
+fi
+
+# --- Compress all binaries --------------------------------------------------
+
+for bin in target/*/release/fastobo-validator; do
+  sudo upx -9 $bin
+done
+
 # --- Package x86_64-linux-musl ----------------------------------------------
 
 mkdir -p $TRAVIS_BUILD_DIR/dist

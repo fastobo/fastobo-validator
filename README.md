@@ -1,14 +1,47 @@
 # `fastobo-validator` [![Star me](https://img.shields.io/github/stars/fastobo/fastobo-validator.svg?style=social&label=Star&maxAge=3600)](https://github.com/fastobo/fastobo-validator/stargazers)
 
-*Faultless AST for Open Biomedical Ontologies in Python.*
+*Faultess validation tool for OBO products.*
 
 [![TravisCI](https://img.shields.io/travis/fastobo/fastobo-validator/master.svg?maxAge=600&style=flat-square)](https://travis-ci.org/fastobo/fastobo-validator/branches)
-[![Codecov](https://img.shields.io/codecov/c/gh/fastobo/fastobo-validator/master.svg?style=flat-square&maxAge=600)](https://codecov.io/gh/fastobo/fastobo-validator)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square&maxAge=2678400)](https://choosealicense.com/licenses/mit/)
 [![Source](https://img.shields.io/badge/source-GitHub-303030.svg?maxAge=2678400&style=flat-square)](https://github.com/fastobo/fastobo-validator)
+[![Binaries](https://img.shields.io/badge/binaries-Bintray-43a047.svg?style=flat-square&maxAge=3600)](https://bintray.com/fastobo/fastobo-validator)
 [![Crate](https://img.shields.io/crates/v/fastobo-validator.svg?maxAge=600&style=flat-square)](https://crates.io/crates/fastobo-validator)
 [![Changelog](https://img.shields.io/badge/keep%20a-changelog-8A0707.svg?maxAge=2678400&style=flat-square)](https://github.com/fastobo/fastobo-validator/blob/master/CHANGELOG.md)
 [![GitHub issues](https://img.shields.io/github/issues/fastobo/fastobo-validator.svg?style=flat-square)](https://github.com/fastobo/fastobo-validator/issues)
+
+
+## Overview
+
+`fastobo-validator` is a command-line tool to validate an OBO file in format
+version 1.4 against the [latest specification](http://owlcollab.github.io/oboformat/doc/obo-syntax.html).
+
+
+## Validation
+
+### Mandatory
+
+#### Syntax
+
+The syntax of the OBO format version 1.4 has been made more restrictive compared
+to the format version 1.2, but files produces by modern tools (such as `ROBOT`)
+should already be compliant with this version.
+
+
+### Optional
+
+#### ISBN validation (`-I`)
+
+ISBN identifiers embed a validation digit which can be used to validate a given
+code without querying an external database.
+
+
+## Usage
+
+Simply run the binary against one or more OBO files:
+```console
+$ fastobo-validator
+```
 
 
 ## Feedback

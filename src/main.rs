@@ -69,7 +69,7 @@ fn main() {
             clap::Arg::with_name("ISBN")
                 .short("I")
                 .long("ISBN")
-                .help("Syntactically validate ISBN identifiers"),
+                .help("Enable syntactic validation of ISBN identifiers"),
         )
         .get_matches();
 

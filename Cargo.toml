@@ -19,7 +19,7 @@ repository = "fastobo/fastobo-validator"
 status     = "actively-developed"
 
 [dependencies]
-clap = { version = "2.33.0", features = ["color"] }
+clap = "2.33.0"
 colored = "1.7.0"
 fastobo = "0.1.0"
 failure = "0.1.5"
