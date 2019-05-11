@@ -13,20 +13,18 @@ categories = ["science"]
 
 [badges.travis-ci]
 repository = "fastobo/fastobo-validator"
-[badges.codecov]
-repository = "fastobo/fastobo-validator"
-service    = "github"
 [badges.is-it-maintained-issue-resolution]
 repository = "fastobo/fastobo-validator"
 [badges.maintenance]
 status     = "actively-developed"
 
 [dependencies]
-clap = "2.33.0"
+clap = { version = "2.33.0", features = ["color"] }
 colored = "1.7.0"
 fastobo = "0.1.0"
+failure = "0.1.5"
 isbn = "0.2.0"
-ureq = "0.9.1"
+textwrap = "0.11.0"
 
 [profile.test]
 opt-level = 1
