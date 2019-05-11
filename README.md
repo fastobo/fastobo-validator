@@ -40,7 +40,7 @@ code without querying an external database.
 
 Simply run the binary against one or more OBO files:
 ```console
-$ fastobo-validator
+$ fastobo-validator go.obo
 ```
 
 

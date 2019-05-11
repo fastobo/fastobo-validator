@@ -6,7 +6,7 @@
 
 export DATE=$(date -I)
 for template in ci/bintray/*.json.in; do
-  envsubst < "$template" | tee "${template%.in}"
+  envsubst < "$template" > "${template%.in}"
 done
 
 # --- Strip binaries if this is a release build ------------------------------
