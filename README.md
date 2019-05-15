@@ -43,6 +43,10 @@ Simply run the binary against one or more OBO files:
 $ fastobo-validator go.obo
 ```
 
+The validator will then parse and validate each OBO product, and return with a
+non-null error code if any error was detected, displaying a small report for
+each error.
+
 
 ## Feedback
 
