@@ -19,7 +19,7 @@
     "files": [
       {
         "includePattern": "dist/(fastobo_validator-.*\.tar\.gz)",
-        "uploadPattern": "/master/$1",
+        "uploadPattern": "/$TRAVIS_TAG/$1",
         "matrixParams": { "override": 1, "list_in_downloads": true }
       }
     ],
