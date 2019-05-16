@@ -5,7 +5,7 @@
 # --- Generating Bintray deployment configuration ----------------------------
 
 export DATE=$(date -I)
-for template in ci/bintray/*/*.json.in; do
+for template in ci/bintray/*.json.in; do
   envsubst < "$template" > "${template%.in}"
 done
 
@@ -26,4 +26,6 @@ done
 # --- Package x86_64-linux-musl ----------------------------------------------
 
 mkdir -p $TRAVIS_BUILD_DIR/dist
-tar czf dist/fastobo_validator-x86_64-linux-musl.tar.gz -C target/x86_64-unknown-linux-musl/release/ fastobo-validator
+tar czf dist/fastobo_validator-x86_64-linux-musl.tar.gz \
+  README.md CHANGELOG.md COPYING \
+  -C target/x86_64-unknown-linux-musl/release/ fastobo-validator
