@@ -1,11 +1,11 @@
 #!/bin/sh -e
 
-. $(dirname $0)/functions.sh
+. $(dirname $(dirname $0))/functions.sh
 
 # --- Generating Bintray deployment configuration ----------------------------
 
 export DATE=$(date -I)
-for template in ci/bintray/*.json.in; do
+for template in ci/bintray/*/*.json.in; do
   envsubst < "$template" > "${template%.in}"
 done
 

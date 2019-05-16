@@ -2,13 +2,17 @@ dist: xenial
 language: Rust
 cache: cargo
 
+os:
+- osx
+- linux
+
 rust:
 - stable
 
 env:
   global:
-  - PATH="$HOME/.cargo/bin:$PATH"
   - RUST_BACKTRACE=1
+  - PATH="$HOME/.cargo/bin:$PATH"
   - IMG_LINUX64=messense/rust-musl-cross:x86_64-musl
 
 addons:
@@ -19,16 +23,15 @@ addons:
 services:
 - docker
 
-before_install:
-- docker pull $IMG_LINUX64
+install:
+- ci/travis/${TRAVIS_OS_NAME}/install.sh
 
 script:
 - cargo check
-- docker run --rm -it -v $(pwd):/home/rust/src -v $HOME/.cargo:/root/.cargo $IMG_LINUX64
-  cargo build --release
+- ci/travis/${TRAVIS_OS_NAME}/script.sh
 
 after_success:
-- ci/travis/after_success.sh
+- ci/travis/${TRAVIS_OS_NAME}/after_success.sh
 
 notifications:
   email:
@@ -36,7 +39,7 @@ notifications:
 
 deploy:
 - provider: bintray
-  file: ci/bintray/master.x86_64-linux-musl.json
+  file: ci/bintray/${TRAVIS_OS_NAME}/master.json
   user: althonos
   key:
     secure: XCFicO9tn18ZpY2+D0Sds55x5selq6/DwmL8qdKFYFiINw+kCLYKiZDRH1dTwouqyDJzblLhLsvHxKvETSZj8F3EMjQzBCWjYbJvmavPk10k+RP4WcBULhTpKJDqj5duL4VDOZL7qWyOUuQLQPL3EaXcCaxYx/3Q93K9N8RKrdCxIBdTR4tdGnEYlKVDyAxAoq7WfWJPMS9gNgXzumGrka/GW7oEy0zarLGgTcF514DBbIipAsz4PK1FQUL2qMNwk1koE5IVCR8aEzN/2G4gN7ipzqNHas58rGpGfN9aQGvXhs1Pw6izcN72YTpqpNmeiLk5eXGrgh3fQk1DtaXtigBWuMfQVCQPCHmg0xgo0mfLOQAH9BEEgtMzjeChXvzVFK0uYDZ1GpRAIli5Gn9TtliqDYMPCcHoK4z846KBn1ToNScFgBk04XZpu7u71xbSu7h8dNksQ/WxvmaEeNJwJUXn5MpohXjYD5IyJNXmsixaK+/vW8Lt5CQwdXZeUaNSibFtaicCV+93BpQ7K0Fiw+A0wI6Cg6qH4aOrrsG2IKL37N6Z2BmcIF4ebfsqHMQZUvBwOc3k2VevmFk7s0wNq3DU2EUgenTy9Es+gDSBxQ66MM1VskBwsOx74XbYLZ9clYyAGjT0Rqfzbj0FKDJNI2vochDWr46su1e5OGnYk8I=
@@ -45,7 +48,7 @@ deploy:
     repo: fastobo/fastobo-validator
     rust: stable
 - provider: bintray
-  file: ci/bintray/tag.x86_64-linux-musl.json
+  file: ci/bintray/${TRAVIS_OS_NAME}/tag.json
   user: althonos
   key:
     secure: XCFicO9tn18ZpY2+D0Sds55x5selq6/DwmL8qdKFYFiINw+kCLYKiZDRH1dTwouqyDJzblLhLsvHxKvETSZj8F3EMjQzBCWjYbJvmavPk10k+RP4WcBULhTpKJDqj5duL4VDOZL7qWyOUuQLQPL3EaXcCaxYx/3Q93K9N8RKrdCxIBdTR4tdGnEYlKVDyAxAoq7WfWJPMS9gNgXzumGrka/GW7oEy0zarLGgTcF514DBbIipAsz4PK1FQUL2qMNwk1koE5IVCR8aEzN/2G4gN7ipzqNHas58rGpGfN9aQGvXhs1Pw6izcN72YTpqpNmeiLk5eXGrgh3fQk1DtaXtigBWuMfQVCQPCHmg0xgo0mfLOQAH9BEEgtMzjeChXvzVFK0uYDZ1GpRAIli5Gn9TtliqDYMPCcHoK4z846KBn1ToNScFgBk04XZpu7u71xbSu7h8dNksQ/WxvmaEeNJwJUXn5MpohXjYD5IyJNXmsixaK+/vW8Lt5CQwdXZeUaNSibFtaicCV+93BpQ7K0Fiw+A0wI6Cg6qH4aOrrsG2IKL37N6Z2BmcIF4ebfsqHMQZUvBwOc3k2VevmFk7s0wNq3DU2EUgenTy9Es+gDSBxQ66MM1VskBwsOx74XbYLZ9clYyAGjT0Rqfzbj0FKDJNI2vochDWr46su1e5OGnYk8I=
@@ -55,7 +58,7 @@ deploy:
     rust: stable
     tags: true
 - provider: bintray
-  file: ci/bintray/stable.x86_64-linux-musl.json
+  file: ci/bintray/${TRAVIS_OS_NAME}/stable.json
   user: althonos
   key:
     secure: XCFicO9tn18ZpY2+D0Sds55x5selq6/DwmL8qdKFYFiINw+kCLYKiZDRH1dTwouqyDJzblLhLsvHxKvETSZj8F3EMjQzBCWjYbJvmavPk10k+RP4WcBULhTpKJDqj5duL4VDOZL7qWyOUuQLQPL3EaXcCaxYx/3Q93K9N8RKrdCxIBdTR4tdGnEYlKVDyAxAoq7WfWJPMS9gNgXzumGrka/GW7oEy0zarLGgTcF514DBbIipAsz4PK1FQUL2qMNwk1koE5IVCR8aEzN/2G4gN7ipzqNHas58rGpGfN9aQGvXhs1Pw6izcN72YTpqpNmeiLk5eXGrgh3fQk1DtaXtigBWuMfQVCQPCHmg0xgo0mfLOQAH9BEEgtMzjeChXvzVFK0uYDZ1GpRAIli5Gn9TtliqDYMPCcHoK4z846KBn1ToNScFgBk04XZpu7u71xbSu7h8dNksQ/WxvmaEeNJwJUXn5MpohXjYD5IyJNXmsixaK+/vW8Lt5CQwdXZeUaNSibFtaicCV+93BpQ7K0Fiw+A0wI6Cg6qH4aOrrsG2IKL37N6Z2BmcIF4ebfsqHMQZUvBwOc3k2VevmFk7s0wNq3DU2EUgenTy9Es+gDSBxQ66MM1VskBwsOx74XbYLZ9clYyAGjT0Rqfzbj0FKDJNI2vochDWr46su1e5OGnYk8I=
@@ -80,6 +83,7 @@ deploy:
   on:
     repo: fastobo/fastobo-validator
     rust: stable
+    os: linux
     tags: true
 - provider: script
   script: ci/travis/deploy.sh
@@ -87,3 +91,4 @@ deploy:
     repo: fastobo/fastobo-validator
     rust: stable
     tags: true
+    os: linux

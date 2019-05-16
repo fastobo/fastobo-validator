@@ -1,6 +1,6 @@
 {
     "package": {
-        "name": "x86_64-linux-musl",
+        "name": "static",
         "repo": "fastobo-validator",
         "subject": "fastobo",
         "github_use_tag_release_notes": true,
@@ -8,8 +8,8 @@
     },
 
     "version": {
-        "name": "$TRAVIS_TAG",
-        "desc": "Release v$TRAVIS_TAG",
+        "name": "stable",
+        "desc": "Release version built from the latest release tag.",
         "released": "$DATE",
         "vcs_tag": "$TRAVIS_TAG",
         "attributes": [],
@@ -18,8 +18,8 @@
 
     "files": [
       {
-        "includePattern": "dist/fastobo_validator-x86_64-linux-musl.tar.gz",
-        "uploadPattern": "/$TRAVIS_TAG/fastobo_validator-x86_64-linux-musl.tar.gz",
+        "includePattern": "dist/(fastobo_validator-.*\.tar\.gz)",
+        "uploadPattern": "/master/$1",
         "matrixParams": { "override": 1, "list_in_downloads": true }
       }
     ],
