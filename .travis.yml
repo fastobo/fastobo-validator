@@ -19,6 +19,9 @@ addons:
   apt:
     packages:
     - upx-ucl
+  homebrew:
+    packages:
+    - upx
 
 services:
 - docker
