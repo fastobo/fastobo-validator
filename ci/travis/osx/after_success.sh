@@ -4,7 +4,7 @@
 
 # --- Generating Bintray deployment configuration ----------------------------
 
-export DATE=$(date -I)
+export DATE=$(date "+%Y-%m-%d")
 for template in ci/bintray/*.json.in; do
   envsubst < "$template" > "${template%.in}"
 done
