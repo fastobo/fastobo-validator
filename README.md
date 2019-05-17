@@ -5,7 +5,7 @@
 [![TravisCI](https://img.shields.io/travis/fastobo/fastobo-validator/master.svg?maxAge=600&style=flat-square)](https://travis-ci.org/fastobo/fastobo-validator/branches)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square&maxAge=2678400)](https://choosealicense.com/licenses/mit/)
 [![Source](https://img.shields.io/badge/source-GitHub-303030.svg?maxAge=2678400&style=flat-square)](https://github.com/fastobo/fastobo-validator)
-[![Binaries](https://img.shields.io/badge/binaries-Bintray-43a047.svg?style=flat-square&maxAge=3600)](https://bintray.com/fastobo/fastobo-validator)
+[![Binaries](https://img.shields.io/bintray/v/fastobo/fastobo-validator/static.svg?color=43a047&style=flat-square&maxAge=3600)](https://bintray.com/fastobo/fastobo-validator)
 [![Crate](https://img.shields.io/crates/v/fastobo-validator.svg?maxAge=600&style=flat-square)](https://crates.io/crates/fastobo-validator)
 [![Changelog](https://img.shields.io/badge/keep%20a-changelog-8A0707.svg?maxAge=2678400&style=flat-square)](https://github.com/fastobo/fastobo-validator/blob/master/CHANGELOG.md)
 [![GitHub issues](https://img.shields.io/github/issues/fastobo/fastobo-validator.svg?style=flat-square)](https://github.com/fastobo/fastobo-validator/issues)
