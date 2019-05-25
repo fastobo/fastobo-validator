@@ -182,7 +182,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "fastobo"
-version = "0.2.0"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "failure 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -205,12 +205,12 @@ dependencies = [
 
 [[package]]
 name = "fastobo-validator"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "clap 2.33.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "colored 1.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "failure 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
- "fastobo 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "fastobo 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "isbn 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "itertools 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -666,7 +666,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum failure 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "795bd83d3abeb9220f257e597aa0080a508b27533824adf336529648f6abf7e2"
 "checksum failure_derive 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "ea1063915fd7ef4309e222a5a07cf9c319fb9c7836b1f89b85458672dbb127e1"
 "checksum fake-simd 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "e88a8acf291dafb59c2d96e8f59828f3838bb1a70398823ade51a84de6a6deed"
-"checksum fastobo 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "88a8781d87cbf443bd49684c67f0fdd6c4a70464ebbd39a1a663fefd0415adfa"
+"checksum fastobo 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "c74c312022af45ad9f1b50d4cfa073353d02a7f14dd98fef20022fdab826961d"
 "checksum fastobo-syntax 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "59635dd821051873f9a50add515282fc92a9af85276d137acbffdf31743ddcbd"
 "checksum fuchsia-cprng 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "a06f77d526c1a601b7c4cdd98f54b5eaabffc14d5f2f0296febdc7f357c6d3ba"
 "checksum generic-array 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)" = "3c0f28c2f5bfb5960175af447a2da7c18900693738343dc896ffbcabd9839592"
