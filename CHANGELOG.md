@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/fastobo/fastobo/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/fastobo/fastobo/compare/v0.1.3...HEAD
+
+
+## [0.1.3] - 2019-06-04
+
+[0.1.3]: https://github.com/fastobo/fastobo/compare/v0.1.2...v0.1.3
+
+### Fixed
+- Bumped `fastobo` version to prevent a bug when parsing Xref lists
 
 
 ## [0.1.2] - 2019-05-24
