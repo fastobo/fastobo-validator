@@ -87,7 +87,7 @@ deploy:
   on:
     repo: fastobo/fastobo-validator
     rust: stable
-    os: linux
+    condition: $TRAVIS_OS_NAME = linux
     tags: true
 - provider: script
   script: ci/travis/deploy.sh
@@ -96,4 +96,4 @@ deploy:
     repo: fastobo/fastobo-validator
     rust: stable
     tags: true
-    os: linux
+    condition: $TRAVIS_OS_NAME = linux
