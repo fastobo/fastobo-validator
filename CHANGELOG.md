@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/fastobo/fastobo/compare/v0.1.3...HEAD
+[Unreleased]: https://github.com/fastobo/fastobo/compare/v0.2.0...HEAD
+
+
+## [0.2.0] - 2019-06-13
+
+[0.2.0]: https://github.com/fastobo/fastobo/compare/v0.1.3...v0.2.0
+
+### Added
+- Mandatory validation of clause cardinality.
 
 
 ## [0.1.3] - 2019-06-04
