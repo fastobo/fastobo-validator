@@ -9,6 +9,7 @@ extern crate isbn as isbn_crate;
 extern crate itertools;
 extern crate textwrap;
 
+mod cardinality;
 mod isbn;
 
 use colored::*;
@@ -18,6 +19,7 @@ use fastobo::error::Error;
 use fastobo::error::SyntaxError;
 use itertools::Itertools;
 
+use self::cardinality::CardinalityChecker;
 use self::isbn::IsbnChecker;
 
 macro_rules! success {
@@ -88,7 +90,8 @@ fn main() {
             if let Error::SyntaxError {
                 error: SyntaxError::ParserError { error, .. },
                 ..
-            } = e {
+            } = e
+            {
                 print!("{}", textwrap::indent(&error.to_string(), "        "))
             } else {
                 print!("{}", textwrap::indent(&e.to_string(), "         --> "));
@@ -97,7 +100,10 @@ fn main() {
         }
     };
 
-    // Perform additional validation
+    // Mandatory validations
+    failures.append(&mut CardinalityChecker::validate(&doc));
+
+    // Optional validations
     if matches.is_present("ISBN") {
         failures.append(&mut IsbnChecker::validate(&doc));
     }
