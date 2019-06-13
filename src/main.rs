@@ -15,6 +15,7 @@ use colored::*;
 use failure::Fail;
 use fastobo::ast::*;
 use fastobo::error::Error;
+use fastobo::error::SyntaxError;
 use itertools::Itertools;
 
 use self::isbn::IsbnChecker;
@@ -84,7 +85,10 @@ fn main() {
         }
         Err(e) => {
             failure!("Failed", "parsing `{}`", path.display());
-            if let Error::ParserError { error, .. } = e {
+            if let Error::SyntaxError {
+                error: SyntaxError::ParserError { error, .. },
+                ..
+            } = e {
                 print!("{}", textwrap::indent(&error.to_string(), "        "))
             } else {
                 print!("{}", textwrap::indent(&e.to_string(), "         --> "));

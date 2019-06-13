@@ -5,8 +5,8 @@ use std::fmt::Formatter;
 use std::fmt::Result as FmtResult;
 use std::str::FromStr;
 
-use fastobo::ast::Identified;
 use fastobo::ast::*;
+use fastobo::semantics::Identified;
 use fastobo::visit::Visit;
 use isbn_crate::Isbn;
 
