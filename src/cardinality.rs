@@ -1,9 +1,4 @@
 use std::collections::HashMap;
-use std::collections::HashSet;
-use std::fmt::Display;
-use std::fmt::Formatter;
-use std::fmt::Result as FmtResult;
-use std::str::FromStr;
 
 use fastobo::ast::*;
 use fastobo::error::CardinalityError;

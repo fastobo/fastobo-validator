@@ -12,15 +12,18 @@ extern crate textwrap;
 mod cardinality;
 mod isbn;
 
+extern crate fastobo_validator;
+
 use colored::*;
-use failure::Fail;
 use fastobo::ast::*;
 use fastobo::error::Error;
 use fastobo::error::SyntaxError;
 use itertools::Itertools;
 
-use self::cardinality::CardinalityChecker;
-use self::isbn::IsbnChecker;
+use fastobo_validator::Validator;
+use fastobo_validator::ValidationError;
+use fastobo_validator::cardinality::CardinalityChecker;
+use fastobo_validator::isbn::IsbnChecker;
 
 macro_rules! success {
     ($status:literal, $msg:literal, $($args:expr),*) => {
@@ -40,15 +43,6 @@ macro_rules! failure {
             $($args),*
         )
     }
-}
-
-pub trait Validator {
-    fn validate(doc: &OboDoc) -> Vec<ValidationError>;
-}
-
-pub struct ValidationError {
-    location: String,
-    cause: Box<dyn Fail>,
 }
 
 fn main() {
