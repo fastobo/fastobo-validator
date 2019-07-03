@@ -21,7 +21,7 @@ status     = "actively-developed"
 [dependencies]
 clap = "2.33.0"
 colored = "1.7.0"
-fastobo = "0.4.2"
+fastobo = "0.4.3"
 failure = "0.1.5"
 log = "0.4"
 isbn = "0.2.0"
