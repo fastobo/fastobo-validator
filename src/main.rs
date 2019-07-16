@@ -2,9 +2,9 @@
 
 extern crate clap;
 extern crate colored;
-extern crate fastobo;
 #[macro_use]
-extern crate failure;
+extern crate err_derive;
+extern crate fastobo;
 extern crate isbn as isbn_crate;
 extern crate itertools;
 extern crate textwrap;

@@ -4,7 +4,7 @@ extern crate clap;
 extern crate colored;
 extern crate fastobo;
 #[macro_use]
-extern crate failure;
+extern crate err_derive;
 extern crate isbn as isbn_crate;
 extern crate itertools;
 extern crate textwrap;
@@ -12,7 +12,7 @@ extern crate textwrap;
 pub mod cardinality;
 pub mod isbn;
 
-use failure::Fail;
+use std::error::Error;
 use fastobo::ast::*;
 
 pub use self::cardinality::CardinalityChecker;
@@ -24,5 +24,5 @@ pub trait Validator {
 
 pub struct ValidationError {
     pub location: String,
-    pub cause: Box<dyn Fail>,
+    pub cause: Box<dyn Error>,
 }

@@ -13,8 +13,7 @@ use isbn_crate::Isbn;
 use super::ValidationError;
 use super::Validator;
 
-#[derive(Debug, Fail)]
-#[cause(1)]
+#[derive(Debug, Error)]
 pub struct InvalidIsbn(PrefixedIdent, isbn_crate::IsbnError);
 
 impl Display for InvalidIsbn {
