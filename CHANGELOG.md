@@ -7,7 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/fastobo/fastobo/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/fastobo/fastobo/compare/v0.2.2...HEAD
+
+
+## [v0.2.2] - 2019-07-15
+
+[v0.2.2]: https://github.com/fastobo/fastobo/compare/v0.2.1...v0.2.2
 
 ### Changed
 - Bumped `fastobo` to `v0.6.0`
@@ -16,43 +21,43 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Allow ISO 8601 datetimes with fractional seconds.
 
 
-## [0.2.1] - 2019-07-15
+## [v0.2.1] - 2019-07-15
 
-[0.2.1]: https://github.com/fastobo/fastobo/compare/v0.2.0...v0.2.1
+[v0.2.1]: https://github.com/fastobo/fastobo/compare/v0.2.0...v0.2.1
 
 ### Changed
 - Bumped `fastobo` to `v0.5.0`.
 - Used `err-derive` instead of `failure` for error chain management
 
 
-## [0.2.0] - 2019-06-13
+## [v0.2.0] - 2019-06-13
 
-[0.2.0]: https://github.com/fastobo/fastobo/compare/v0.1.3...v0.2.0
+[v0.2.0]: https://github.com/fastobo/fastobo/compare/v0.1.3...v0.2.0
 
 ### Added
 - Mandatory validation of clause cardinality.
 
 
-## [0.1.3] - 2019-06-04
+## [v0.1.3] - 2019-06-04
 
-[0.1.3]: https://github.com/fastobo/fastobo/compare/v0.1.2...v0.1.3
+[v0.1.3]: https://github.com/fastobo/fastobo/compare/v0.1.2...v0.1.3
 
 ### Fixed
 - Bumped `fastobo` version to prevent a bug when parsing Xref lists
 
 
-## [0.1.2] - 2019-05-24
+## [v0.1.2] - 2019-05-24
 
-[0.1.2]: https://github.com/fastobo/fastobo/compare/v0.1.1...v0.1.2
+[v0.1.2]: https://github.com/fastobo/fastobo/compare/v0.1.1...v0.1.2
 
 ### Fixed
 - Bumped `fastobo` version to prevent a panic when parsing OBO
   documents containing instance frames.
 
 
-## [0.1.1] - 2019-05-16
+## [v0.1.1] - 2019-05-16
 
-[0.1.1]: https://github.com/fastobo/fastobo/compare/v0.1.0...v0.1.1
+[v0.1.1]: https://github.com/fastobo/fastobo/compare/v0.1.0...v0.1.1
 
 ### Added
 - Continuous deployment of Mac OSX pre-built binaries.
@@ -65,8 +70,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Fixed example command in `README.md`.
 
 
-## [0.1.0] - 2019-05-11
+## [v0.1.0] - 2019-05-11
 
-[0.1.0]: https://github.com/fastobo/fastobo/compare/239f642...v0.1.0
+[v0.1.0]: https://github.com/fastobo/fastobo/compare/239f642...v0.1.0
 
 Initial release.
