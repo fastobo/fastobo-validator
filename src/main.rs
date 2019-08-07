@@ -73,7 +73,7 @@ fn main() {
     // Parse the file
     success!("Parsing", "`{}`", path.display());
     let start = std::time::Instant::now();
-    let doc = match OboDoc::from_file(&path) {
+    let doc = match fastobo::from_file(&path) {
         Ok(d) => {
             let dt = start.elapsed().as_millis() as f64 / 1000.0;
             success!("Finished", "parsing `{}` in {:.2}s", path.display(), dt);
