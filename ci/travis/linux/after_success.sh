@@ -11,21 +11,19 @@ done
 
 # --- Strip binaries if this is a release build ------------------------------
 
-if [ ! -z "$TRAVIS_TAG" ]; then
-  for bin in target/*/release/fastobo-validator; do
-    sudo strip $bin || :
-  done
-fi
+find -name fastobo-validator
+
+#if [ ! -z "$TRAVIS_TAG" ]; then
+#  sudo strip target/release/fastobo-validator || :
+#fi
 
 # --- Compress all binaries --------------------------------------------------
 
-for bin in target/*/release/fastobo-validator; do
-  sudo upx -9 $bin
-done
+#sudo upx -9 target/release/fastobo-validator || :
 
 # --- Package x86_64-linux-musl ----------------------------------------------
 
-mkdir -p $TRAVIS_BUILD_DIR/dist
+mkdir -p dist
 tar czf dist/fastobo_validator-x86_64-linux-musl.tar.gz \
   README.md CHANGELOG.md COPYING \
-  -C target/x86_64-unknown-linux-musl/release/ fastobo-validator
+  -C target/release/ fastobo-validator
