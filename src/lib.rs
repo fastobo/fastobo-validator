@@ -3,8 +3,6 @@
 extern crate clap;
 extern crate colored;
 extern crate fastobo;
-#[macro_use]
-extern crate err_derive;
 extern crate isbn as isbn_crate;
 extern crate itertools;
 extern crate textwrap;

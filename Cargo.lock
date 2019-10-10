@@ -247,7 +247,6 @@ dependencies = [
  "assert_cmd 0.11.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "clap 2.33.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "colored 1.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "err-derive 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "fastobo 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "isbn 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "itertools 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",

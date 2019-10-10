@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 [Unreleased]: https://github.com/fastobo/fastobo/compare/v0.2.3...HEAD
 
+### Changed
+- Removed `err-derive` dependency.
+
 
 ## [v0.2.3] - 2019-08-07
 

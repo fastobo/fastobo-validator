@@ -1,5 +1,6 @@
 use std::collections::HashMap;
 use std::collections::HashSet;
+use std::error::Error;
 use std::fmt::Display;
 use std::fmt::Formatter;
 use std::fmt::Result as FmtResult;
@@ -13,8 +14,14 @@ use isbn_crate::Isbn;
 use super::ValidationError;
 use super::Validator;
 
-#[derive(Debug, Error)]
+#[derive(Debug)]
 pub struct InvalidIsbn(PrefixedIdent, isbn_crate::IsbnError);
+
+impl Error for InvalidIsbn {
+    fn description(&self) -> &str {
+        "invalid isbn"
+    }
+}
 
 impl Display for InvalidIsbn {
     fn fmt(&self, f: &mut Formatter) -> FmtResult {
