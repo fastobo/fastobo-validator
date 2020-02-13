@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/fastobo/fastobo/compare/v0.2.3...HEAD
+[Unreleased]: https://github.com/fastobo/fastobo/compare/v0.2.4...HEAD
+
+
+## [v0.2.4] - 2020-02-13
+
+[v0.2.4]: https://github.com/fastobo/fastobo/compare/v0.2.3...v0.2.4
 
 ### Changed
+- Bumped `fastobo` dependency from `v0.7.0` to `v0.8.2`.
 - Removed `err-derive` dependency.
 
 
