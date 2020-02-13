@@ -20,7 +20,8 @@
       {
         "includePattern": "dist/(fastobo_validator-.*\.tar\.gz)",
         "uploadPattern": "/stable/$1",
-        "matrixParams": { "override": 1, "list_in_downloads": true }
+        "matrixParams": { "override": 1 },
+        "list_in_downloads": true
       }
     ],
 
