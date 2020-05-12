@@ -19,7 +19,7 @@ repository = "fastobo/fastobo-validator"
 status     = "actively-developed"
 
 [dependencies]
-clap = "2.33.0"
+clap = "2.33.1"
 colored = "1.9.2"
 fastobo = "0.8.2"
 log = "0.4.8"
