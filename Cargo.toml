@@ -24,7 +24,7 @@ colored = "1.9.2"
 fastobo = "0.9.0"
 log = "0.4.8"
 isbn = "0.2.0"
-textwrap = "0.12.0"
+textwrap = "0.12.1"
 itertools = "0.9.0"
 
 [dev-dependencies]
