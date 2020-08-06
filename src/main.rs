@@ -9,6 +9,7 @@ extern crate textwrap;
 
 mod cardinality;
 mod isbn;
+mod duplicates;
 
 extern crate fastobo_validator;
 
@@ -21,6 +22,7 @@ use itertools::Itertools;
 use fastobo_validator::Validator;
 use fastobo_validator::ValidationError;
 use fastobo_validator::cardinality::CardinalityChecker;
+use fastobo_validator::duplicates::DuplicateIdChecker;
 use fastobo_validator::isbn::IsbnChecker;
 
 macro_rules! success {
@@ -60,6 +62,12 @@ fn main() {
                 .long("ISBN")
                 .help("Enable syntactic validation of ISBN identifiers"),
         )
+        .arg(
+            clap::Arg::with_name("DUPS")
+                .short("d")
+                .long("duplicates")
+                .help("Enforce all entity identifiers to be unique across frames.")
+        )
         .get_matches();
 
     // Record all failures
@@ -98,6 +106,9 @@ fn main() {
     // Optional validations
     if matches.is_present("ISBN") {
         failures.append(&mut IsbnChecker::validate(&doc));
+    }
+    if matches.is_present("DUPS") {
+        failures.append(&mut DuplicateIdChecker::validate(&doc))
     }
 
     // Display all errors and exit

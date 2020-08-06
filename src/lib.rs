@@ -9,11 +9,13 @@ extern crate textwrap;
 
 pub mod cardinality;
 pub mod isbn;
+pub mod duplicates;
 
 use std::error::Error;
 use fastobo::ast::*;
 
 pub use self::cardinality::CardinalityChecker;
+pub use self::duplicates::DuplicateIdChecker;
 pub use self::isbn::IsbnChecker;
 
 pub trait Validator {
