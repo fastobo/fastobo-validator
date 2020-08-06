@@ -80,15 +80,6 @@ deploy:
     repo: fastobo/fastobo-validator
     rust: stable
     tags: true
-- provider: cargo
-  token:
-    secure: FhmTftkPAMhgkVXq4YHMy/HYRvAUXo3jdVPknQjoBttcoFC80WbLsMu6xtW8XeI+15G/1T/U+mtHAOpD/doTmkFVhf/QRMtzlmKAQCEBXHf5f0WzBa3BGImh6LxHj5I2HHKWPBoqKuC5rhu0OFGYRk6YYyA2SZRSZEP0ZGYtIIca1/CeSZPSlh93YdCI7zjh1rO7mk0IVklEgPhsttM6Iv7N2T89+AQOV6bNuxDol/2QSS/uJ+lZH9N0ykJ6lOF2diMAChDZZgVHB0Uh6dAoMckwvBI8ywSsKv3kYzelc5W2YQmNIzK2URuMPb/G2yuHGvmNxo5mWr7Ewqi3iXxZUygAIJKzk6hrZcYgcWPE4lNwZ37qkfrDPizGp3V3aVqczDwJ1eyiiTyK7ca+gxV5FjfWLF2YQucSTMZE1tBbLov6oZVi4FClKnt+YeB2VhHSm62hn/AhivQtUnExnxgcuaa1ktBR+JvkbNUBMRytA47qIOy1Gae0bnv1OFMpS8AaiHis9g6vLbveRSpR6PlT2GOr23KfYWjiDC5y+rdsxjyUp4VpTq3hD3s2qCl4KHlZB/h/vdUhk+skTFmwSTaWGqYIHUFafiiRkYouqrlFOxloMP5oJoxkoIkTD/K0lN3VNIlhWvPAMteCzMd4GF3a5dfLBPPoCrEt+HIERceZhTc=
-  skip_cleanup: true
-  on:
-    repo: fastobo/fastobo-validator
-    rust: stable
-    condition: $TRAVIS_OS_NAME = linux
-    tags: true
 - provider: script
   script: ci/travis/deploy.sh
   skip_cleanup: true

@@ -259,7 +259,7 @@ dependencies = [
 
 [[package]]
 name = "fastobo-validator"
-version = "0.2.4"
+version = "0.3.0"
 dependencies = [
  "assert_cmd 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "clap 2.33.2 (registry+https://github.com/rust-lang/crates.io-index)",

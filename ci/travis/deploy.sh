@@ -2,6 +2,11 @@
 
 . $(dirname $0)/functions.sh
 
+# --- Deploy crate -----------------------------------------------------------
+
+log Deploying \`fastobo-validator\` $TRAVIS_TAG
+cargo publish --manifest-path Cargo.toml --token $CRATES_IO_TOKEN
+
 # --- Update GitHub release notes --------------------------------------------
 
 export GEM_PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')"
