@@ -2,7 +2,7 @@
 
 *Faultess validation tool for OBO products.*
 
-[![TravisCI](https://img.shields.io/travis/fastobo/fastobo-validator/master.svg?maxAge=600&style=flat-square)](https://travis-ci.org/fastobo/fastobo-validator/branches)
+[![TravisCI](https://img.shields.io/travis/com/fastobo/fastobo-validator/master.svg?maxAge=600&style=flat-square)](https://travis-ci.com/fastobo/fastobo-validator/branches)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square&maxAge=2678400)](https://choosealicense.com/licenses/mit/)
 [![Source](https://img.shields.io/badge/source-GitHub-303030.svg?maxAge=2678400&style=flat-square)](https://github.com/fastobo/fastobo-validator)
 [![Binaries](https://img.shields.io/badge/binaries-bintray-brightgreen.svg?style=flat-square&maxAge=2678400)](https://bintray.com/fastobo/fastobo-validator)
