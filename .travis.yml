@@ -41,15 +41,15 @@ notifications:
   - althonosdev@gmail.com
 
 deploy:
-- provider: bintray
-  file: ci/bintray/static.master.json
-  user: althonos
-  key:
-    secure: XCFicO9tn18ZpY2+D0Sds55x5selq6/DwmL8qdKFYFiINw+kCLYKiZDRH1dTwouqyDJzblLhLsvHxKvETSZj8F3EMjQzBCWjYbJvmavPk10k+RP4WcBULhTpKJDqj5duL4VDOZL7qWyOUuQLQPL3EaXcCaxYx/3Q93K9N8RKrdCxIBdTR4tdGnEYlKVDyAxAoq7WfWJPMS9gNgXzumGrka/GW7oEy0zarLGgTcF514DBbIipAsz4PK1FQUL2qMNwk1koE5IVCR8aEzN/2G4gN7ipzqNHas58rGpGfN9aQGvXhs1Pw6izcN72YTpqpNmeiLk5eXGrgh3fQk1DtaXtigBWuMfQVCQPCHmg0xgo0mfLOQAH9BEEgtMzjeChXvzVFK0uYDZ1GpRAIli5Gn9TtliqDYMPCcHoK4z846KBn1ToNScFgBk04XZpu7u71xbSu7h8dNksQ/WxvmaEeNJwJUXn5MpohXjYD5IyJNXmsixaK+/vW8Lt5CQwdXZeUaNSibFtaicCV+93BpQ7K0Fiw+A0wI6Cg6qH4aOrrsG2IKL37N6Z2BmcIF4ebfsqHMQZUvBwOc3k2VevmFk7s0wNq3DU2EUgenTy9Es+gDSBxQ66MM1VskBwsOx74XbYLZ9clYyAGjT0Rqfzbj0FKDJNI2vochDWr46su1e5OGnYk8I=
-  skip_cleanup: true
-  on:
-    repo: fastobo/fastobo-validator
-    rust: stable
+# - provider: bintray
+#   file: ci/bintray/static.master.json
+#   user: althonos
+#   key:
+#     secure: XCFicO9tn18ZpY2+D0Sds55x5selq6/DwmL8qdKFYFiINw+kCLYKiZDRH1dTwouqyDJzblLhLsvHxKvETSZj8F3EMjQzBCWjYbJvmavPk10k+RP4WcBULhTpKJDqj5duL4VDOZL7qWyOUuQLQPL3EaXcCaxYx/3Q93K9N8RKrdCxIBdTR4tdGnEYlKVDyAxAoq7WfWJPMS9gNgXzumGrka/GW7oEy0zarLGgTcF514DBbIipAsz4PK1FQUL2qMNwk1koE5IVCR8aEzN/2G4gN7ipzqNHas58rGpGfN9aQGvXhs1Pw6izcN72YTpqpNmeiLk5eXGrgh3fQk1DtaXtigBWuMfQVCQPCHmg0xgo0mfLOQAH9BEEgtMzjeChXvzVFK0uYDZ1GpRAIli5Gn9TtliqDYMPCcHoK4z846KBn1ToNScFgBk04XZpu7u71xbSu7h8dNksQ/WxvmaEeNJwJUXn5MpohXjYD5IyJNXmsixaK+/vW8Lt5CQwdXZeUaNSibFtaicCV+93BpQ7K0Fiw+A0wI6Cg6qH4aOrrsG2IKL37N6Z2BmcIF4ebfsqHMQZUvBwOc3k2VevmFk7s0wNq3DU2EUgenTy9Es+gDSBxQ66MM1VskBwsOx74XbYLZ9clYyAGjT0Rqfzbj0FKDJNI2vochDWr46su1e5OGnYk8I=
+#   skip_cleanup: true
+#   on:
+#     repo: fastobo/fastobo-validator
+#     rust: stable
 - provider: bintray
   file: ci/bintray/static.tag.json
   user: althonos
@@ -60,16 +60,16 @@ deploy:
     repo: fastobo/fastobo-validator
     rust: stable
     tags: true
-- provider: bintray
-  file: ci/bintray/static.stable.json
-  user: althonos
-  key:
-    secure: XCFicO9tn18ZpY2+D0Sds55x5selq6/DwmL8qdKFYFiINw+kCLYKiZDRH1dTwouqyDJzblLhLsvHxKvETSZj8F3EMjQzBCWjYbJvmavPk10k+RP4WcBULhTpKJDqj5duL4VDOZL7qWyOUuQLQPL3EaXcCaxYx/3Q93K9N8RKrdCxIBdTR4tdGnEYlKVDyAxAoq7WfWJPMS9gNgXzumGrka/GW7oEy0zarLGgTcF514DBbIipAsz4PK1FQUL2qMNwk1koE5IVCR8aEzN/2G4gN7ipzqNHas58rGpGfN9aQGvXhs1Pw6izcN72YTpqpNmeiLk5eXGrgh3fQk1DtaXtigBWuMfQVCQPCHmg0xgo0mfLOQAH9BEEgtMzjeChXvzVFK0uYDZ1GpRAIli5Gn9TtliqDYMPCcHoK4z846KBn1ToNScFgBk04XZpu7u71xbSu7h8dNksQ/WxvmaEeNJwJUXn5MpohXjYD5IyJNXmsixaK+/vW8Lt5CQwdXZeUaNSibFtaicCV+93BpQ7K0Fiw+A0wI6Cg6qH4aOrrsG2IKL37N6Z2BmcIF4ebfsqHMQZUvBwOc3k2VevmFk7s0wNq3DU2EUgenTy9Es+gDSBxQ66MM1VskBwsOx74XbYLZ9clYyAGjT0Rqfzbj0FKDJNI2vochDWr46su1e5OGnYk8I=
-  skip_cleanup: true
-  on:
-    repo: fastobo/fastobo-validator
-    rust: stable
-    tags: true
+# - provider: bintray
+#   file: ci/bintray/static.stable.json
+#   user: althonos
+#   key:
+#     secure: XCFicO9tn18ZpY2+D0Sds55x5selq6/DwmL8qdKFYFiINw+kCLYKiZDRH1dTwouqyDJzblLhLsvHxKvETSZj8F3EMjQzBCWjYbJvmavPk10k+RP4WcBULhTpKJDqj5duL4VDOZL7qWyOUuQLQPL3EaXcCaxYx/3Q93K9N8RKrdCxIBdTR4tdGnEYlKVDyAxAoq7WfWJPMS9gNgXzumGrka/GW7oEy0zarLGgTcF514DBbIipAsz4PK1FQUL2qMNwk1koE5IVCR8aEzN/2G4gN7ipzqNHas58rGpGfN9aQGvXhs1Pw6izcN72YTpqpNmeiLk5eXGrgh3fQk1DtaXtigBWuMfQVCQPCHmg0xgo0mfLOQAH9BEEgtMzjeChXvzVFK0uYDZ1GpRAIli5Gn9TtliqDYMPCcHoK4z846KBn1ToNScFgBk04XZpu7u71xbSu7h8dNksQ/WxvmaEeNJwJUXn5MpohXjYD5IyJNXmsixaK+/vW8Lt5CQwdXZeUaNSibFtaicCV+93BpQ7K0Fiw+A0wI6Cg6qH4aOrrsG2IKL37N6Z2BmcIF4ebfsqHMQZUvBwOc3k2VevmFk7s0wNq3DU2EUgenTy9Es+gDSBxQ66MM1VskBwsOx74XbYLZ9clYyAGjT0Rqfzbj0FKDJNI2vochDWr46su1e5OGnYk8I=
+#   skip_cleanup: true
+#   on:
+#     repo: fastobo/fastobo-validator
+#     rust: stable
+#     tags: true
 - provider: releases
   api_key:
     secure: LWfOFiLkKJIYsTNsrbC0c/zgR4v7668bvuifDOtLAdvUswmeMhvKFULusSbwWgl/Q8douETPJ4d4T7U8puxnYtd+Dv9DGbCDjVDgo+8IrUBM7W+NmOk1kErDlVlXKCeUWPloAdY/7T5Wdo3EPW+GuHRVdoANbBax3eIN3/7JwkkxX4ARtFPQsQ4UEApy/IYy7x4hfTWqKzIFaKdSmNqlSE/40VdrS3Jb+l3nFwxU2sd553fUR97f0bn0+0VRyGSuQ6uPa/hWXnSpNEKGGxbMe47iaI/bHGXKLfaawVrgne03Hf+ulZ9CTRXsWaDx5yuAOZCsXbIXti1FvL8U1XScSWn67l89zPlZyEpfO8TApq9IszKmVLADIkX0ki3OzbAiDExATO/ojjyXTP1zWkcxkAAp0Wc8DsqVJHb7DkkiXXoQIDwnqnCtX/JyK0VMUlmqdJz3x0rxy+YXWcGgRLBvafvZ1p1Wq/j/lEEGlXsV9VYvPay1vLFRgKBifvdc6GaTuDiHyK3boQZ4SyIiq7VeXlge2/j8WXIwnopomvFd+WLA+p5Aa4g+NVFl0B9HPeg8tA5sguroxUFay4iN72Nj6qY6yABeekUMOx1wQUAxO8VYcnJhgibhSxfBn2VexuLnA/vY2MooKjNv6YJNoqtYnRmzUX4OGncnHMGMt5pcVRk=
