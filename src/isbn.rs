@@ -17,12 +17,6 @@ use super::Validator;
 #[derive(Debug)]
 pub struct InvalidIsbn(PrefixedIdent, isbn_crate::IsbnError);
 
-impl Error for InvalidIsbn {
-    fn description(&self) -> &str {
-        "invalid isbn"
-    }
-}
-
 impl Display for InvalidIsbn {
     fn fmt(&self, f: &mut Formatter) -> FmtResult {
         write!(f, "invalid isbn `{}` ", self.0)?;
@@ -34,6 +28,12 @@ impl Display for InvalidIsbn {
             isbn_crate::IsbnError::InvalidConversion => "(invalid conversion)",
             isbn_crate::IsbnError::UndefinedRange => "(undefined range)",
         })
+    }
+}
+
+impl Error for InvalidIsbn {
+    fn description(&self) -> &str {
+        "invalid isbn"
     }
 }
 

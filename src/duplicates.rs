@@ -19,15 +19,15 @@ pub struct DuplicateIdError {
     count: usize
 }
 
-impl Error for DuplicateIdError {
-    fn description(&self) -> &str {
-        "id appears more than once"
-    }
-}
-
 impl Display for DuplicateIdError {
     fn fmt(&self, f: &mut Formatter) -> FmtResult {
         write!(f, "id `{}` appears more than once ({} times)", self.id, self.count)
+    }
+}
+
+impl Error for DuplicateIdError {
+    fn description(&self) -> &str {
+        "id appears more than once"
     }
 }
 

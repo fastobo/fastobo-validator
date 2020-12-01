@@ -8,8 +8,9 @@ extern crate itertools;
 extern crate textwrap;
 
 pub mod cardinality;
-pub mod isbn;
 pub mod duplicates;
+pub mod isbn;
+pub mod obsoletion;
 
 use std::error::Error;
 use fastobo::ast::*;
