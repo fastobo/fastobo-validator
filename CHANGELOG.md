@@ -6,7 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 
 ## [Unreleased]
-[Unreleased]: https://github.com/fastobo/fastobo/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/fastobo/fastobo/compare/v0.4.0...HEAD
+
+## [v0.4.0] - 2020-12-01
+[v0.4.0]: https://github.com/fastobo/fastobo/compare/v0.3.0...v0.4.0
+### Changed
+- Bumped `fastobo` dependency to `v0.12.0`.
+### Added 
+- `--obsoletion` CLI flag to check clauses valid only for obsolete clauses are not applied to non-obsolete entities.
+- `--all` CLI flag to enable all optional checks.
 
 ## [v0.3.0] - 2020-08-06
 [v0.3.0]: https://github.com/fastobo/fastobo/compare/v0.2.4...v0.3.0
