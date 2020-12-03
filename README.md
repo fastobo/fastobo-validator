@@ -20,14 +20,15 @@ version 1.4 against the [latest specification](http://owlcollab.github.io/obofor
 
 `fastobo-validator` is distributed as a pre-built binary for the following platforms:
 * Linux x86-64 - 
-  [stable version](https://bintray.com/fastobo/fastobo-validator/download_file?file_path=v0.4.0%2Ffastobo_validator-x86_64-linux-musl.tar.gz) -
+  [latest version](https://bintray.com/fastobo/fastobo-validator/download_file?file_path=v0.4.0%2Ffastobo_validator-x86_64-linux-musl.tar.gz)
 * OSX x86-64 - 
-  [stable version](https://bintray.com/fastobo/fastobo-validator/download_file?file_path=v0.4.0%2Ffastobo_validator-x86_64-apple-darwin.tar.gz) -
+  [latest version](https://bintray.com/fastobo/fastobo-validator/download_file?file_path=v0.4.0%2Ffastobo_validator-x86_64-apple-darwin.tar.gz)
 
 Simply download the archive, and unpack the `fastobo-validator` binary somewhere in your `$PATH`. 
 For other OS (notably Windows), you'll need to build the binary from source. Make sure to have the
 Rust compiler installed (check the [installation methods](https://forge.rust-lang.org/other-installation-methods.html)) 
 and simply run `cargo install fastobo-validator` to install the binary in your `$CARGO_HOME` folder.
+
 
 ## Validation
 
@@ -39,15 +40,42 @@ The syntax of the OBO format version 1.4 has been made more restrictive compared
 to the format version 1.2, but files produces by modern tools (such as `ROBOT`)
 should already be compliant with this version.
 
+#### Cardinality
+
+Certain clauses (such as `name` or `def`) can only occur a fixed number of times
+within a frame. `fastobo-validator` will check for the number of occurences of 
+those in the input document.
+
 
 ### Optional
 
-#### ISBN validation (`-I`)
+#### ISBN validation (`-I` / `--ISBN`)
 
 ISBN identifiers embed a validation digit which can be used to validate a given
 code without querying an external database. Enabling this validation check will
 process all `ISBN`-prefixed identifiers for a valid ISBN. It will *not* check
 `ISBN10` or `ISBN13`-prefixed identifiers.
+
+
+#### Frame duplication (`-d` / `--duplicates`)
+
+While not forbidden by the OBO syntax and semantics, having frames with the same
+ID in an OBO document is often an error. Use this flag to verify all frames 
+in the input have a unique identifier. 
+
+
+#### Obsoletion clauses (`-O` / `--obsoletion`)
+
+Some clauses, such as `consider` or `replaced_by`, can only occur in frames for
+entities that have been made obsolete. Use this flag to check this is the case.
+
+
+#### All check (`--all`)
+
+Enable all optional validation. *Note that using this parameter in an automated 
+context, such as a CI workflow, means that your file may not pass validation if
+you update `fastobo-validator` after extra checks have been added. It is 
+recommended you only use this flag when running the binary yourself.*
 
 
 ## Usage
