@@ -20,11 +20,9 @@ version 1.4 against the [latest specification](http://owlcollab.github.io/obofor
 
 `fastobo-validator` is distributed as a pre-built binary for the following platforms:
 * Linux x86-64 - 
-  [stable version](https://bintray.com/fastobo/fastobo-validator/download_file?file_path=stable%2Ffastobo_validator-x86_64-linux-musl.tar.gz) -
-  [development version](https://bintray.com/fastobo/fastobo-validator/download_file?file_path=master%2Ffastobo_validator-x86_64-linux-musl.tar.gz)
+  [stable version](https://bintray.com/fastobo/fastobo-validator/download_file?file_path=v0.4.0%2Ffastobo_validator-x86_64-linux-musl.tar.gz) -
 * OSX x86-64 - 
-  [stable version](https://bintray.com/fastobo/fastobo-validator/download_file?file_path=stable%2Ffastobo_validator-x86_64-apple-darwin.tar.gz) -
-  [development version](https://bintray.com/fastobo/fastobo-validator/download_file?file_path=master%2Ffastobo_validator-x86_64-apple-darwin.tar.gz)
+  [stable version](https://bintray.com/fastobo/fastobo-validator/download_file?file_path=v0.4.0%2Ffastobo_validator-x86_64-apple-darwin.tar.gz) -
 
 Simply download the archive, and unpack the `fastobo-validator` binary somewhere in your `$PATH`. 
 For other OS (notably Windows), you'll need to build the binary from source. Make sure to have the
@@ -78,4 +76,8 @@ reproducible situation.
 This project is currently being developed by [Martin Larralde](https://github.com/althonos)
 as part of a Master's Degree internship in the [BBOP team](http://berkeleybop.org/) of the
 [Lawrence Berkeley National Laboratory](https://www.lbl.gov/), under the supervision of
-[Chris Mungall](http://biosciences.lbl.gov/profiles/chris-mungall/).
+[Chris Mungall](http://biosciences.lbl.gov/profiles/chris-mungall/). Cite this project as:
+
+*Larralde M.* **Developing Python and Rust libraries to improve the ontology ecosystem**
+*\[version 1; not peer reviewed\].* F1000Research 2019, 8(ISCB Comm J):1500 (poster)
+([https://doi.org/10.7490/f1000research.1117405.1](https://doi.org/10.7490/f1000research.1117405.1))
