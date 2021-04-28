@@ -1,0 +1,15 @@
+version: 2
+updates:
+- package-ecosystem: cargo
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: textwrap
+    versions:
+    - 0.13.2
+    - 0.13.3
+  - dependency-name: fastobo
+    versions:
+    - 0.13.0
