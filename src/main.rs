@@ -19,12 +19,12 @@ use fastobo::error::Error;
 use fastobo::error::SyntaxError;
 use itertools::Itertools;
 
-use fastobo_validator::Validator;
-use fastobo_validator::ValidationError;
 use fastobo_validator::cardinality::CardinalityChecker;
 use fastobo_validator::duplicates::DuplicateIdChecker;
 use fastobo_validator::isbn::IsbnChecker;
 use fastobo_validator::obsoletion::ObsoletionChecker;
+use fastobo_validator::ValidationError;
+use fastobo_validator::Validator;
 
 macro_rules! success {
     ($status:literal, $msg:literal, $($args:expr),*) => {
@@ -61,7 +61,7 @@ fn main() {
             clap::Arg::new("ALL")
                 .short('a')
                 .long("all")
-                .help("Enable all optional checks.")
+                .help("Enable all optional checks."),
         )
         .arg(
             clap::Arg::new("ISBN")
@@ -73,13 +73,13 @@ fn main() {
             clap::Arg::new("DUPS")
                 .short('d')
                 .long("duplicates")
-                .help("Enforce all entity identifiers to be unique across frames.")
+                .help("Enforce all entity identifiers to be unique across frames."),
         )
         .arg(
             clap::Arg::new("OBSOLETION")
                 .short('O')
                 .long("obsoletion")
-                .help("Enforce obsoletion clauses are only applied to obsolete terms.")
+                .help("Enforce obsoletion clauses are only applied to obsolete terms."),
         )
         .get_matches();
 

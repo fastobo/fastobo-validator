@@ -22,7 +22,7 @@ macro_rules! impl_visit {
                 self.entity_errors.insert(frame.as_id(), e);
             }
         }
-    }
+    };
 }
 
 impl<'a> Visit<'a> for CardinalityChecker<'a> {

@@ -1,12 +1,9 @@
-
 use std::error::Error;
 use std::fmt::Display;
 use std::fmt::Formatter;
 use std::fmt::Result as FmtResult;
 
 use fastobo::ast::*;
-
-
 
 use fastobo::visit::Visit;
 
@@ -23,15 +20,23 @@ pub struct ObsoletionError {
 impl Display for ObsoletionError {
     fn fmt(&self, f: &mut Formatter) -> FmtResult {
         if self.replaced_by > 0 {
-            write!(f, "non-obsolete entity contains {} `replaced_by` clause(s)", self.replaced_by)
+            write!(
+                f,
+                "non-obsolete entity contains {} `replaced_by` clause(s)",
+                self.replaced_by
+            )
         } else {
-            write!(f, "non-obsolete entity contains {} `consider` clause(s)", self.consider)
+            write!(
+                f,
+                "non-obsolete entity contains {} `consider` clause(s)",
+                self.consider
+            )
         }
     }
 }
 
 impl Error for ObsoletionError {
-    fn description(&self) -> &str  {
+    fn description(&self) -> &str {
         "non-obsolete frame contains obsoletion clauses"
     }
 }
@@ -44,7 +49,6 @@ pub struct ObsoletionChecker {
 macro_rules! impl_visit {
     ($name:ident, $frame:ty, $clause:ident) => {
         fn $name(&mut self, frame: &'a $frame) {
-
             let mut obsolete = false;
             let mut replaced_by: Vec<&'a Ident> = Vec::new();
             let mut consider: Vec<&'a Ident> = Vec::new();
@@ -52,13 +56,9 @@ macro_rules! impl_visit {
             for clause in frame.clauses() {
                 match clause.as_inner() {
                     $clause::IsObsolete(true) => obsolete = true,
-                    $clause::ReplacedBy(id) => {
-                        replaced_by.push(id.as_ref().as_ref())
-                    }
-                    $clause::Consider(id) => {
-                        consider.push(id.as_ref().as_ref())
-                    }
-                    _ => ()
+                    $clause::ReplacedBy(id) => replaced_by.push(id.as_ref().as_ref()),
+                    $clause::Consider(id) => consider.push(id.as_ref().as_ref()),
+                    _ => (),
                 }
             }
 
@@ -70,7 +70,7 @@ macro_rules! impl_visit {
                 })
             }
         }
-    }
+    };
 }
 
 impl<'a> Visit<'a> for ObsoletionChecker {
@@ -91,7 +91,6 @@ impl Validator for ObsoletionChecker {
                 cause: Box::new(err),
             })
         }
-
 
         errors
     }

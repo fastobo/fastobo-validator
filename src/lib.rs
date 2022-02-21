@@ -12,8 +12,8 @@ pub mod duplicates;
 pub mod isbn;
 pub mod obsoletion;
 
-use std::error::Error;
 use fastobo::ast::*;
+use std::error::Error;
 
 pub use self::cardinality::CardinalityChecker;
 pub use self::duplicates::DuplicateIdChecker;

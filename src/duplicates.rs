@@ -16,12 +16,16 @@ use super::Validator;
 #[derive(Debug)]
 pub struct DuplicateIdError {
     id: Ident,
-    count: usize
+    count: usize,
 }
 
 impl Display for DuplicateIdError {
     fn fmt(&self, f: &mut Formatter) -> FmtResult {
-        write!(f, "id `{}` appears more than once ({} times)", self.id, self.count)
+        write!(
+            f,
+            "id `{}` appears more than once ({} times)",
+            self.id, self.count
+        )
     }
 }
 
@@ -41,7 +45,7 @@ macro_rules! impl_visit {
         fn $name(&mut self, frame: &'a $frame) {
             *self.counts.entry(frame.as_id()).or_default() += 1;
         }
-    }
+    };
 }
 
 impl<'a> Visit<'a> for DuplicateIdChecker<'a> {
@@ -62,7 +66,7 @@ impl Validator for DuplicateIdChecker<'_> {
                     location: String::from("complete document"),
                     cause: Box::new(DuplicateIdError {
                         id: id.clone(),
-                        count
+                        count,
                     }),
                 })
             }
