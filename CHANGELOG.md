@@ -6,7 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 
 ## [Unreleased]
-[Unreleased]: https://github.com/fastobo/fastobo/compare/v0.4.3...HEAD
+[Unreleased]: https://github.com/fastobo/fastobo/compare/v0.4.4...HEAD
+
+## [v0.4.4] - 2022-02-21
+[v0.4.4]: https://github.com/fastobo/fastobo/compare/v0.4.3...v0.4.4
+### Fixed
+- Drop compression with UPX before releasing static Linux binaries.
 
 ## [v0.4.3] - 2022-02-21
 [v0.4.3]: https://github.com/fastobo/fastobo/compare/v0.4.2...v0.4.3
