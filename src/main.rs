@@ -105,9 +105,9 @@ fn main() {
                 ..
             } = e
             {
-                print!("{}", textwrap::indent(&error.to_string(), "        "))
+                println!("{}", textwrap::indent(&error.to_string(), "        "))
             } else {
-                print!("{}", textwrap::indent(&e.to_string(), "         --> "));
+                println!("{}", textwrap::indent(&e.to_string(), "         --> "));
             }
             std::process::exit(1);
         }
@@ -140,12 +140,12 @@ fn main() {
             .group_by(|e| e.location.clone())
             .into_iter()
         {
-            print!(
+            println!(
                 "{}",
                 textwrap::indent(&format!("in {}", location), "         --> ").bold()
             );
             for error in errors {
-                print!(
+                println!(
                     "{}",
                     textwrap::indent(&format!("{}", error.cause), "             ")
                 );
