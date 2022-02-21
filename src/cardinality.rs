@@ -38,7 +38,7 @@ impl<'a> Visit<'a> for CardinalityChecker<'a> {
 impl Validator for CardinalityChecker<'_> {
     fn validate(doc: &OboDoc) -> Vec<ValidationError> {
         let mut checker = Self::default();
-        checker.visit_doc(&doc);
+        checker.visit_doc(doc);
 
         let mut errors = Vec::new();
 
