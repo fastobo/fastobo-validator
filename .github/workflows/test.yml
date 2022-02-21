@@ -72,7 +72,7 @@ jobs:
         profile: minimal
         toolchain: stable
         override: true
-    - name: Package and publish declaration crate
+    - name: Package and publish crate
       uses: actions-rs/cargo@v1
       with:
         command: publish
