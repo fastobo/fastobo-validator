@@ -94,7 +94,9 @@ jobs:
 
   artifact:
     needs: release
-    runs-on: messense/rust-musl-cross:x86_64-musl
+    runs-on: ubuntu-latest
+    container:
+      image: messense/rust-musl-cross:x86_64-musl
     if: "startsWith(github.ref, 'refs/tags/v')"
     name: Update static binaries
     steps:
