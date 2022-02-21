@@ -15,7 +15,6 @@ mod obsoletion;
 extern crate fastobo_validator;
 
 use colored::*;
-use fastobo::ast::*;
 use fastobo::error::Error;
 use fastobo::error::SyntaxError;
 use itertools::Itertools;
@@ -49,36 +48,36 @@ macro_rules! failure {
 
 fn main() {
     // Parse the CLI arguments.
-    let matches = clap::App::new(clap::crate_name!())
+    let matches = clap::Command::new(clap::crate_name!())
         .author(clap::crate_authors!(","))
         .version(clap::crate_version!())
         .about(clap::crate_description!())
         .arg(
-            clap::Arg::with_name("INPUT")
+            clap::Arg::new("INPUT")
                 .required(true)
                 .help("The path to an OBO file"),
         )
         .arg(
-            clap::Arg::with_name("ALL")
-                .short("a")
+            clap::Arg::new("ALL")
+                .short('a')
                 .long("all")
                 .help("Enable all optional checks.")
         )
         .arg(
-            clap::Arg::with_name("ISBN")
-                .short("I")
+            clap::Arg::new("ISBN")
+                .short('I')
                 .long("ISBN")
                 .help("Enable syntactic validation of ISBN identifiers"),
         )
         .arg(
-            clap::Arg::with_name("DUPS")
-                .short("d")
+            clap::Arg::new("DUPS")
+                .short('d')
                 .long("duplicates")
                 .help("Enforce all entity identifiers to be unique across frames.")
         )
         .arg(
-            clap::Arg::with_name("OBSOLETION")
-                .short("O")
+            clap::Arg::new("OBSOLETION")
+                .short('O')
                 .long("obsoletion")
                 .help("Enforce obsoletion clauses are only applied to obsolete terms.")
         )
