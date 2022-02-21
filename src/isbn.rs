@@ -55,8 +55,8 @@ impl<'a> Visit<'a> for IsbnChecker<'a> {
     }
 
     fn visit_prefixed_ident(&mut self, id: &'a PrefixedIdent) {
-        if id.prefix().as_str() == "ISBN" {
-            if let Err(e) = Isbn::from_str(id.local().as_str()) {
+        if id.prefix() == "ISBN" {
+            if let Err(e) = Isbn::from_str(id.local()) {
                 self.invalid
                     .entry(self.current_entity.unwrap())
                     .or_default()
