@@ -24,7 +24,7 @@ fastobo = "0.15.0"
 log = "0.4.11"
 isbn = "0.2.0"
 textwrap = "0.14.2"
-itertools = "0.10.0"
+itertools = "0.10.4"
 [dependencies.clap]
 version = "3.1.0"
 features = ["cargo"]
