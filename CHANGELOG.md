@@ -6,7 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 
 ## [Unreleased]
-[Unreleased]: https://github.com/fastobo/fastobo/compare/v0.4.5...HEAD
+[Unreleased]: https://github.com/fastobo/fastobo/compare/v0.4.6...HEAD
+
+## [v0.4.6] - 2022-09-26
+[v0.4.6]: https://github.com/fastobo/fastobo/compare/v0.4.5...v0.4.6
+### Fixed
+- Binaries not being released from GitHub Actions.
 
 ## [v0.4.5] - 2022-09-26
 [v0.4.5]: https://github.com/fastobo/fastobo/compare/v0.4.4...v0.4.5

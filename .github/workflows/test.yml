@@ -118,6 +118,7 @@ jobs:
           RUSTTARGET: ${{ matrix.target }}
           EXTRA_FILES: "README.md CHANGELOG.md COPYING"
           ARCHIVE_TYPES: ${{ matrix.archive }}
+          UPLOAD_MODE: none
       - name: Release archives
         uses: softprops/action-gh-release@v1
         with:
