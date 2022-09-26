@@ -96,6 +96,7 @@ jobs:
     needs: release
     name: Upload ${{ matrix.target }}
     runs-on: ubuntu-latest
+    if: "startsWith(github.ref, 'refs/tags/v')"
     strategy:
       fail-fast: false
       matrix:
@@ -109,6 +110,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Compile release archives
+        id: compile
         uses: rust-build/rust-build.action@v1.3.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -117,7 +119,6 @@ jobs:
           EXTRA_FILES: "README.md CHANGELOG.md COPYING"
           ARCHIVE_TYPES: ${{ matrix.archive }}
       - name: Release archives
-        if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v1
         with:
           files: |
