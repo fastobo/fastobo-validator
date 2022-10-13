@@ -26,7 +26,7 @@ isbn = "0.2.0"
 textwrap = "0.15.1"
 itertools = "0.10.0"
 [dependencies.clap]
-version = "3.1.0"
+version = "4.0.15"
 features = ["cargo"]
 
 [dev-dependencies]
