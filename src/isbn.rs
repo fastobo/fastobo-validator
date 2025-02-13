@@ -26,6 +26,7 @@ impl Display for InvalidIsbn {
             isbn_crate::IsbnError::InvalidDigit => "(invalid digit)",
             isbn_crate::IsbnError::InvalidGroup => "(invalid group)",
             isbn_crate::IsbnError::InvalidConversion => "(invalid conversion)",
+            isbn_crate::IsbnError::DigitTooLarge => "(digit too large)",
             isbn_crate::IsbnError::UndefinedRange => "(undefined range)",
         })
     }

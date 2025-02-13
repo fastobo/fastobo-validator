@@ -61,24 +61,28 @@ fn main() {
             clap::Arg::new("ALL")
                 .short('a')
                 .long("all")
+                .action(clap::ArgAction::SetTrue)
                 .help("Enable all optional checks."),
         )
         .arg(
             clap::Arg::new("ISBN")
                 .short('I')
                 .long("ISBN")
+                .action(clap::ArgAction::SetTrue)
                 .help("Enable syntactic validation of ISBN identifiers"),
         )
         .arg(
             clap::Arg::new("DUPS")
                 .short('d')
                 .long("duplicates")
+                .action(clap::ArgAction::SetTrue)
                 .help("Enforce all entity identifiers to be unique across frames."),
         )
         .arg(
             clap::Arg::new("OBSOLETION")
                 .short('O')
                 .long("obsoletion")
+                .action(clap::ArgAction::SetTrue)
                 .help("Enforce obsoletion clauses are only applied to obsolete terms."),
         )
         .get_matches();
@@ -87,7 +91,7 @@ fn main() {
     let mut failures: Vec<ValidationError> = Vec::new();
 
     // Resolve the path.
-    let path = std::path::PathBuf::from(matches.value_of("INPUT").unwrap());
+    let path = std::path::PathBuf::from(matches.get_one::<String>("INPUT").unwrap());
 
     // Parse the file
     success!("Parsing", "`{}`", path.display());
@@ -117,13 +121,13 @@ fn main() {
     failures.append(&mut CardinalityChecker::validate(&doc));
 
     // Optional validations
-    if matches.is_present("ISBN") || matches.is_present("ALL") {
+    if matches.get_flag("ISBN") || matches.get_flag("ALL") {
         failures.append(&mut IsbnChecker::validate(&doc));
     }
-    if matches.is_present("DUPS") || matches.is_present("ALL") {
+    if matches.get_flag("DUPS") || matches.get_flag("ALL") {
         failures.append(&mut DuplicateIdChecker::validate(&doc))
     }
-    if matches.is_present("OBSOLETION") || matches.is_present("ALL") {
+    if matches.get_flag("OBSOLETION") || matches.get_flag("ALL") {
         failures.append(&mut ObsoletionChecker::validate(&doc))
     }
 
